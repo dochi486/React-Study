@@ -4,7 +4,7 @@
 
 ### Redux가 필요한 State는?
 
-(useState와 useReduce로 대체 가능합니다.)
+(useState와 useReduce로 대체 가능합니다.)  
 -Cross-Component State: 여러 개의 컴포넌트가 하나의 스테이트를 공유할 때, props chain으로 state를 관리하고 싶지 않을 경우  
 -App-Wide State: 사용자 인증과 같이 앱 전반에 걸쳐서 스테이트 변동이 있을 때  
 
