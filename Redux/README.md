@@ -4,13 +4,13 @@
 
 ### Redux가 필요한 State는?
 
-(useState와 useReduce로 대체 가능합니다.)
--Cross-Component State: 여러 개의 컴포넌트가 하나의 스테이트를 공유할 때, props chain으로 state를 관리하고 싶지 않을 경우
--App-Wide State: 사용자 인증과 같이 앱 전반에 걸쳐서 스테이트 변동이 있을 때
+(useState와 useReduce로 대체 가능합니다.)  
+-Cross-Component State: 여러 개의 컴포넌트가 하나의 스테이트를 공유할 때, props chain으로 state를 관리하고 싶지 않을 경우  
+-App-Wide State: 사용자 인증과 같이 앱 전반에 걸쳐서 스테이트 변동이 있을 때  
 
-Redux는 Context API와 비슷하게 여러 부분에 걸쳐 스테이트를 관리할 때 사용합니다.
-다만, Context API를 사용하게 된다면 아래와 같이 가시성이 좋지 않고 복잡한 코드를 작성하게 될 수도 있습니다.
-많은 컨텍스트와 프로바이더가 중첩되어 있는 경우를 피하고 하나의 컨텍스트가 지나치게 많은 상태를 관리하지 않도록 하기 위해 리덕스를 사용하는 경우가 많습니다.
+Redux는 Context API와 비슷하게 여러 부분에 걸쳐 스테이트를 관리할 때 사용합니다.  
+다만, Context API를 사용하게 된다면 아래와 같이 가시성이 좋지 않고 복잡한 코드를 작성하게 될 수도 있습니다.  
+많은 컨텍스트와 프로바이더가 중첩되어 있는 경우를 피하고 하나의 컨텍스트가 지나치게 많은 상태를 관리하지 않도록 하기 위해 리덕스를 사용하는 경우가 많습니다.  
 
 ![](https://velog.velcdn.com/images/dochi486/post/b55b319b-1c23-4266-a5cc-5677b0b2fb60/image.png)
 
