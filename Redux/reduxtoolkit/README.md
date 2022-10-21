@@ -17,6 +17,8 @@ npm install @reduxjs/toolkit
 - 이전에 만들었던 store를 이런식으로 변경할 수 있다.
 - if체크를 안해도 되기 때문에 가독성이 좋아진다. 기존 state를 변경하지 않도록 내부적으로 immer 패키지를 사용하기 때문에 자동으로 원래의 상태를 복제하고 새로운 상태 객체를 복사한다.
 
+#### store.js
+
 ```JavaScript
 
 const counterSlice = createSlice({
@@ -30,7 +32,7 @@ const counterSlice = createSlice({
       state.counter--;
     },
     increase(state, action) {
-      state.counter = state.counter + action.payload;
+      state.counter = state.counter + action.payload; //꼭 payload로 작성해야한다.
     },
   },
 });
@@ -46,6 +48,8 @@ export const counterActions = couterSlice.actions;
 - 위와 같이 configureStore를 활용해서 리듀서를 등록해줄 수 있다. 여러개의 슬라이스가 있을 경우를 위해 reducer안에 또 다른 객체로 counter를 등록해주었다.
 - 리덕스 툴킷을 사용하면 액션 객체를 conterSlice.actions.incremet()할 때 저절로 생성해주기 때문에 액션 타입 오탈자를 걱정할 필요가 없다.
 - 아래와 같이 액션을 발송할 수 있다.
+
+#### counter.js
 
 ```JavaScript
 import { counterActions } from '../store/counter-slice';
@@ -65,4 +69,17 @@ const Counter = () => {
   const decrementHandler = () => {
     dispatch(counterActions.decrement());
   };
+
+    return (
+    <main className={classes.counter}>
+      <h1>Redux Counter</h1>
+      {show && <div className={classes.value}>{counter}</div>}
+      <div>
+        <button onClick={incrementHandelr}>증가</button>
+        <button onClick={increaseHandler}>5 증가</button>
+        <button onClick={decrementHandler}>감소</button>
+      </div>
+    </main>
+  );
+}
 ```
